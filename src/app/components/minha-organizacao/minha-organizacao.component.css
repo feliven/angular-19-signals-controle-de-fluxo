@@ -1,0 +1,32 @@
+.minha-organizacao {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+  margin: 4% 0;
+}
+
+.titulo {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #6278f7;
+  font-size: 40px;
+  font-family: Prata;
+  font-weight: 400;
+  line-height: 72px;
+  word-wrap: break-word;
+}
+
+.lista-categoria {
+  width: 94%;
+  padding: 4% 3%;
+  background: #e8ffff;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  display: inline-flex;
+}
