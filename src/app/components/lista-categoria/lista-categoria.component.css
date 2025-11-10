@@ -1,0 +1,38 @@
+body {
+  width: 100%;
+  padding: 3% 2%;
+  background: #e8ffff;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  display: inline-flex;
+}
+
+.titulo {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #2e2e2e;
+  font-size: 28px;
+  font-family: Prata;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.linha-cards {
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+.card {
+  flex: 1 1 0;
+  /* Changed .card max-width from 5% to calc(20% - 16px) to fit 5 cards */
+  max-width: calc(20% - 16px);
+  /* min-width: 0 to prevent flex items from overflowing */
+  min-width: 0;
+}
