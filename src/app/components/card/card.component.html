@@ -2,12 +2,14 @@
   <div class="cabecalho"></div>
   <div class="linha-superior-botoes">
     <div class="botoes">
-      <div class="botao-favorito">favorite_outline</div>
+      <button class="botao-favorito" (click)="alternarFavorito()">
+        {{ livro.favorito ? "favorite" : "favorite_outline" }}
+      </button>
     </div>
   </div>
-  <img class="capa" src="https://placehold.co/128x185" />
+  <img class="capa" [src]="livro.imagem" />
   <div class="titulo-e-autoria">
-    <div class="titulo">E não sobrou nenhum</div>
-    <div class="autoria">Agatha Christie</div>
+    <div class="titulo">{{ livro.titulo }}</div>
+    <div class="autoria">{{ livro.autoria }}</div>
   </div>
 </div>

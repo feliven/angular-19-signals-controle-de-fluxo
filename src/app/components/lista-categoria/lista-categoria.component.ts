@@ -7,4 +7,12 @@ import { CardComponent } from '../card/card.component';
   templateUrl: './lista-categoria.component.html',
   styleUrl: './lista-categoria.component.css',
 })
-export class ListaCategoriaComponent {}
+export class ListaCategoriaComponent {
+  categorias = [
+    'Literatura',
+    'Poesia',
+    'Biografias',
+    'Mitos e Lendas',
+    'Técnicos',
+  ];
+}
