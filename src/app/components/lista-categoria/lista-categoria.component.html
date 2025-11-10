@@ -1,5 +1,8 @@
 @for (categoria of categorias; track $index) {
-<div class="titulo">{{ categoria }}</div>
+<section>
+  <div class="titulo">{{ categoria }}</div>
+  <span class="linha-destaque linha-destaque-grande"></span>
+</section>
 <div class="lista-categoria">
   <div class="linha-cards">
     <app-card class="card"></app-card>
@@ -9,5 +12,4 @@
     <app-card class="card"></app-card>
   </div>
 </div>
-
 }

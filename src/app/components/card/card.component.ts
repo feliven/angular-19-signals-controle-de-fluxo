@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Livro {
-  titulo: string;
-  autoria: string;
-  favorito: boolean;
-  imagem: string;
-}
+import { Livro } from '../../shared/livro.interface';
 
 @Component({
   selector: 'app-card',
@@ -18,6 +12,7 @@ export class CardComponent {
     titulo: 'E não sobrou nenhum',
     autoria: 'Agatha Christie',
     favorito: false,
+    genero: 'Literatura',
     imagem: 'https://placehold.co/128x185',
   };
 

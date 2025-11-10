@@ -1,4 +1,4 @@
-body {
+section {
   width: 100%;
   padding: 3% 2%;
   background: #e8ffff;
@@ -19,6 +19,11 @@ body {
   font-family: Prata;
   font-weight: 400;
   word-wrap: break-word;
+}
+
+.linha-destaque-grande {
+  width: 64px;
+  border-bottom: 4px solid lightcoral;
 }
 
 .linha-cards {
