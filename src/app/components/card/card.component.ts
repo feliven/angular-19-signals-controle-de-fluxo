@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Livro } from '../../shared/livro.interface';
 
 @Component({
@@ -8,7 +8,15 @@ import { Livro } from '../../shared/livro.interface';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  livro: Livro = {
+  @Input() livro: Livro = {
+    titulo: '',
+    autoria: '',
+    favorito: false,
+    genero: '',
+    imagem: '',
+  };
+
+  livro2: Livro = {
     titulo: 'E não sobrou nenhum',
     autoria: 'Agatha Christie',
     favorito: false,

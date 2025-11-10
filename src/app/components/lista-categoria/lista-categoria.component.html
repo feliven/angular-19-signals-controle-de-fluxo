@@ -5,11 +5,13 @@
 </section>
 <div class="lista-categoria">
   <div class="linha-cards">
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
+    @for (livro of obterLivrosPorCategoria(categoria); track livro.titulo) {
+    <app-card class="card" [livro]="livro"></app-card>
+    <app-card class="card" [livro]="livro"></app-card>
+    <app-card class="card" [livro]="livro"></app-card>
+    <app-card class="card" [livro]="livro"></app-card>
+    <app-card class="card" [livro]="livro"></app-card>
+    }
   </div>
 </div>
 }

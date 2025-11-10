@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
+import { listaLivros } from '../../mock-livros';
 
 @Component({
   selector: 'app-lista-categoria',
@@ -15,4 +16,10 @@ export class ListaCategoriaComponent {
     'Mitos e Lendas',
     'Técnicos',
   ];
+
+  livros = listaLivros;
+
+  obterLivrosPorCategoria(categoria: string) {
+    return this.livros.filter((livro) => livro.genero === categoria);
+  }
 }
