@@ -1,11 +1,12 @@
 @for (categoria of categorias; track $index) {
 <section>
-  <div class="titulo">{{ categoria }}</div>
+  <div class="titulo">{{ categoria.nome }}</div>
   <span class="linha-destaque linha-destaque-grande"></span>
 </section>
 <div class="lista-categoria">
   <div class="linha-cards">
-    @for (livro of obterLivrosPorCategoria(categoria); track livro.titulo) {
+    @for (livro of obterLivrosPorCategoria(categoria.nome); track livro.titulo)
+    {
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
