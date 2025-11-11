@@ -25,12 +25,22 @@ export class ListaCategoriaComponent implements OnInit {
   livrosPorCategoria: Map<string, Livro[]> = new Map();
   categorias: CategoriaELivro[] = [];
 
+  private categoriasClasses: Map<string, string> = new Map([
+    ['Literatura', 'literatura'],
+    ['Poesia', 'poesia'],
+    ['Biografias', 'biografias'],
+    ['Mitos e Lendas', 'mitos-lendas'],
+    ['Técnicos', 'tecnicos'],
+  ]);
+
   ngOnInit() {
     this.livrosPorCategoria = new Map();
     const livros = listaLivros;
 
     livros.forEach((livro) => {
       const categoria = livro.categoria;
+      livro.classe = this.categoriasClasses.get(categoria);
+
       if (!this.livrosPorCategoria.has(categoria)) {
         this.livrosPorCategoria.set(categoria, []);
       }
@@ -43,27 +53,27 @@ export class ListaCategoriaComponent implements OnInit {
     this.categorias = [
       {
         nome: 'Literatura',
-        classe: 'literatura',
+        classe: this.categoriasClasses.get('Literatura'),
         livros: this.livrosPorCategoria.get('Literatura') ?? [],
       },
       {
         nome: 'Poesia',
-        classe: 'poesia',
+        classe: this.categoriasClasses.get('Poesia'),
         livros: this.livrosPorCategoria.get('Poesia') ?? [],
       },
       {
         nome: 'Biografias',
-        classe: 'biografias',
+        classe: this.categoriasClasses.get('Biografias'),
         livros: this.livrosPorCategoria.get('Biografias') ?? [],
       },
       {
         nome: 'Mitos e Lendas',
-        classe: 'mitos-lendas',
+        classe: this.categoriasClasses.get('Mitos e Lendas'),
         livros: this.livrosPorCategoria.get('Mitos e Lendas') ?? [],
       },
       {
         nome: 'Técnicos',
-        classe: 'tecnicos',
+        classe: this.categoriasClasses.get('Técnicos'),
         livros: this.livrosPorCategoria.get('Técnicos') ?? [],
       },
       {
@@ -71,6 +81,8 @@ export class ListaCategoriaComponent implements OnInit {
         livros: this.livrosPorCategoria.get('sdfsdf') ?? [],
       },
     ];
+
+    console.log(this.categorias);
   }
 
   obterLivrosPorCategoria(categoria: string) {

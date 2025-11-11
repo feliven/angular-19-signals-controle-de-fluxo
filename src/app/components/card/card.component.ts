@@ -12,20 +12,20 @@ import { Livro } from '../../shared/livro.interface';
 export class CardComponent {
   livro = input.required<Livro>();
 
-  @Input() livro3: Livro = {
-    titulo: '',
-    autoria: '',
-    favorito: false,
-    categoria: '',
-    imagem: '',
-  };
-
   livro2: Livro = {
     titulo: 'E não sobrou nenhum',
     autoria: 'Agatha Christie',
     favorito: false,
     categoria: 'Literatura',
     imagem: 'https://placehold.co/128x185',
+  };
+
+  @Input() livro3: Livro = {
+    titulo: '',
+    autoria: '',
+    favorito: false,
+    categoria: '',
+    imagem: '',
   };
 
   alternarFavorito() {

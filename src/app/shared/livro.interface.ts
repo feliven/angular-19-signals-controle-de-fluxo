@@ -4,5 +4,5 @@ export interface Livro {
   favorito: boolean;
   imagem: string;
   categoria: string;
-  classeCategoria?: string;
+  classe?: string;
 }
