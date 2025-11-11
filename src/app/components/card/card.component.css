@@ -98,3 +98,32 @@
   font-weight: 400;
   word-wrap: break-word;
 }
+
+section {
+  border-top: 24px solid;
+}
+
+.literatura {
+  border-color: #82cffa;
+  background: #82cffa;
+}
+
+.poesia {
+  border-color: #a6d157;
+  background: #a6d157;
+}
+
+.biografias {
+  border-color: #e06b69;
+  background: #e06b69;
+}
+
+.mitos-lendas {
+  border-color: #db6ebf;
+  background: #db6ebf;
+}
+
+.tecnicos {
+  border-color: #ff8a29;
+  background: #ff8a29;
+}

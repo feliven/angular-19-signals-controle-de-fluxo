@@ -1,9 +1,11 @@
 import { Component, input, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { Livro } from '../../shared/livro.interface';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })

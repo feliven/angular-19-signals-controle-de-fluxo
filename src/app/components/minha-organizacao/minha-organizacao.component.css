@@ -30,3 +30,10 @@
   gap: 32px;
   display: inline-flex;
 }
+
+.linha-destaque {
+  display: block;
+  margin: 0 auto;
+  width: 64px;
+  border-bottom: 4px solid #6278f7;
+}

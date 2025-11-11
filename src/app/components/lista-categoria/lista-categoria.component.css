@@ -1,7 +1,7 @@
 section {
   width: 100%;
   padding: 3% 2%;
-  background: #e8ffff;
+  background-color: lightyellow;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -23,7 +23,7 @@ section {
 
 .linha-destaque-grande {
   width: 64px;
-  border-bottom: 4px solid lightcoral;
+  border-bottom: 4px solid yellowgreen;
 }
 
 .linha-cards {
