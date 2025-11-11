@@ -21,6 +21,7 @@ export class ListaCategoriaComponent implements OnInit {
 
   livros = listaLivros;
   livrosPorCategoria: Map<string, Livro[]> = new Map();
+  categorias: CategoriaELivro[] = [];
 
   ngOnInit() {
     this.livrosPorCategoria = new Map();
@@ -33,30 +34,37 @@ export class ListaCategoriaComponent implements OnInit {
       }
       this.livrosPorCategoria.get(categoria)?.push(livro);
     });
-  }
 
-  categorias: CategoriaELivro[] = [
-    {
-      nome: 'Literatura',
-      livros: this.livrosPorCategoria.get('Literatura') ?? [],
-    },
-    {
-      nome: 'Poesia',
-      livros: this.livrosPorCategoria.get('Poesia') ?? [],
-    },
-    {
-      nome: 'Biografias',
-      livros: this.livrosPorCategoria.get('Biografias') ?? [],
-    },
-    {
-      nome: 'Mitos e Lendas',
-      livros: this.livrosPorCategoria.get('Mitos e Lendas') ?? [],
-    },
-    {
-      nome: 'Técnicos',
-      livros: this.livrosPorCategoria.get('Técnicos') ?? [],
-    },
-  ];
+    // The categorias array was initialized before ngOnInit() runs,
+    // so livrosPorCategoria was still empty when you tried to access it.
+    // Initialize categorias AFTER populating the Map:
+    this.categorias = [
+      {
+        nome: 'Literatura',
+        livros: this.livrosPorCategoria.get('Literatura') ?? [],
+      },
+      {
+        nome: 'Poesia',
+        livros: this.livrosPorCategoria.get('Poesia') ?? [],
+      },
+      {
+        nome: 'Biografias',
+        livros: this.livrosPorCategoria.get('Biografias') ?? [],
+      },
+      {
+        nome: 'Mitos e Lendas',
+        livros: this.livrosPorCategoria.get('Mitos e Lendas') ?? [],
+      },
+      {
+        nome: 'Técnicos',
+        livros: this.livrosPorCategoria.get('Técnicos') ?? [],
+      },
+      {
+        nome: 'sdfsdf',
+        livros: this.livrosPorCategoria.get('sdfsdf') ?? [],
+      },
+    ];
+  }
 
   obterLivrosPorCategoria(categoria: string) {
     return this.livros.filter((livro) => livro.categoria === categoria);

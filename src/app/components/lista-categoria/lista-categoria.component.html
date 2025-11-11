@@ -5,13 +5,18 @@
 </section>
 <div class="lista-categoria">
   <div class="linha-cards">
-    @for (livro of obterLivrosPorCategoria(categoria.nome); track livro.titulo)
-    {
+    @if (categoria.livros.length !== 0) { @for (livro of
+    obterLivrosPorCategoria(categoria.nome); track livro) {
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
     <app-card class="card" [livro]="livro"></app-card>
+    } }@else {
+    <div class="texto-sem-livros">
+      <img src="/sem-livros.png" alt="" />
+      <p>Ainda não há livros neste gênero.</p>
+    </div>
     }
   </div>
 </div>
