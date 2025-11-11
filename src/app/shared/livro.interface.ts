@@ -3,5 +3,5 @@ export interface Livro {
   autoria: string;
   favorito: boolean;
   imagem: string;
-  genero: string;
+  categoria: string;
 }

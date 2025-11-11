@@ -14,7 +14,7 @@ export class CardComponent {
     titulo: '',
     autoria: '',
     favorito: false,
-    genero: '',
+    categoria: '',
     imagem: '',
   };
 
@@ -22,7 +22,7 @@ export class CardComponent {
     titulo: 'E não sobrou nenhum',
     autoria: 'Agatha Christie',
     favorito: false,
-    genero: 'Literatura',
+    categoria: 'Literatura',
     imagem: 'https://placehold.co/128x185',
   };
 
