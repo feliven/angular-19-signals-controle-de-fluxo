@@ -1,4 +1,4 @@
-@for (categoria of categorias; track $index) {
+@for (categoria of categorias(); track $index) {
 <section class="categorias" [ngClass]="categoria.classe">
   <div class="titulo">{{ categoria.nome }}</div>
   <span
@@ -7,8 +7,8 @@
   ></span>
   <div class="lista-categoria">
     <div class="linha-cards">
-      @if (categoria.livros.length !== 0) { @for (livro of
-      obterLivrosPorCategoria(categoria.nome); track livro) {
+      @if (categoria.livros.length !== 0) { @for (livro of categoria.livros;
+      track livro) {
       <app-card class="card" [livro]="livro"></app-card>
       <app-card class="card" [livro]="livro"></app-card>
       <app-card class="card" [livro]="livro"></app-card>
