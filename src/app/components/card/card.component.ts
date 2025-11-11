@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Livro } from '../../shared/livro.interface';
 
 @Component({
@@ -8,7 +8,9 @@ import { Livro } from '../../shared/livro.interface';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  @Input() livro: Livro = {
+  livro = input.required<Livro>();
+
+  @Input() livro3: Livro = {
     titulo: '',
     autoria: '',
     favorito: false,
@@ -25,6 +27,6 @@ export class CardComponent {
   };
 
   alternarFavorito() {
-    this.livro.favorito = !this.livro.favorito;
+    this.livro().favorito = !this.livro().favorito;
   }
 }

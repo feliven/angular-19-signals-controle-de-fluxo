@@ -3,13 +3,13 @@
   <div class="linha-superior-botoes">
     <div class="botoes">
       <button class="botao-favorito" (click)="alternarFavorito()">
-        {{ livro.favorito ? "favorite" : "favorite_outline" }}
+        {{ livro().favorito ? "favorite" : "favorite_outline" }}
       </button>
     </div>
   </div>
-  <img class="capa" [src]="livro.imagem" />
+  <img class="capa" [src]="livro().imagem" />
   <div class="titulo-e-autoria">
-    <div class="titulo">{{ livro.titulo }}</div>
-    <div class="autoria">{{ livro.autoria }}</div>
+    <div class="titulo">{{ livro().titulo }}</div>
+    <div class="autoria">{{ livro().autoria }}</div>
   </div>
 </div>
