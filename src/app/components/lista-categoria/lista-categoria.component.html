@@ -1,23 +1,23 @@
 @for (categoria of categorias; track $index) {
-<section>
+<section class="categorias" [ngClass]="categoria.classe">
   <div class="titulo">{{ categoria.nome }}</div>
   <span class="linha-destaque linha-destaque-grande"></span>
-</section>
-<div class="lista-categoria">
-  <div class="linha-cards">
-    @if (categoria.livros.length !== 0) { @for (livro of
-    obterLivrosPorCategoria(categoria.nome); track livro) {
-    <app-card class="card" [livro]="livro"></app-card>
-    <app-card class="card" [livro]="livro"></app-card>
-    <app-card class="card" [livro]="livro"></app-card>
-    <app-card class="card" [livro]="livro"></app-card>
-    <app-card class="card" [livro]="livro"></app-card>
-    } }@else {
-    <div class="texto-sem-livros">
-      <img src="/sem-livros.png" alt="" />
-      <p>Ainda não há livros neste gênero.</p>
+  <div class="lista-categoria">
+    <div class="linha-cards">
+      @if (categoria.livros.length !== 0) { @for (livro of
+      obterLivrosPorCategoria(categoria.nome); track livro) {
+      <app-card class="card" [livro]="livro"></app-card>
+      <app-card class="card" [livro]="livro"></app-card>
+      <app-card class="card" [livro]="livro"></app-card>
+      <app-card class="card" [livro]="livro"></app-card>
+      <app-card class="card" [livro]="livro"></app-card>
+      } }@else {
+      <div class="texto-sem-livros">
+        <img src="/sem-livros.png" alt="" />
+        <p>Ainda não há livros neste gênero.</p>
+      </div>
+      }
     </div>
-    }
   </div>
-</div>
+</section>
 }

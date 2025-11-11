@@ -54,3 +54,43 @@ section {
   color: #3b3b3b;
   font-size: 20px;
 }
+
+.literatura {
+  background-color: #e8ffff;
+}
+
+.categorias .literatura {
+  border-bottom: 4px solid #82cffa;
+}
+
+.poesia {
+  background-color: #e9ffe3;
+}
+
+.categorias .poesia {
+  border-bottom: 4px solid #a6d157;
+}
+
+.biografias {
+  background-color: #ffe3e3;
+}
+
+.categorias .biografias {
+  border-bottom: 4px solid #e06b69;
+}
+
+.mitos-lendas {
+  background-color: #fff0fa;
+}
+
+.categorias .mitos-lendas {
+  border-bottom: 4px solid #db6ebf;
+}
+
+.tecnicos {
+  background-color: #fff1e4;
+}
+
+.categorias .tecnicos {
+  border-bottom: 4px solid #ff8a29;
+}
