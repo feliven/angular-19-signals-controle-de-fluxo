@@ -49,10 +49,14 @@ describe('CardComponent', () => {
     expect(component.livro3.imagem).toBe('');
   });
 
-  it('should toggle favorito from false to true', () => {
-    expect(component.livro().favorito).toBe(false);
-    component.alternarFavorito();
+  it('should toggle favorito from true to false', () => {
+    const favoritoLivro: Livro = { ...mockLivro, favorito: true };
+    fixture.componentRef.setInput('livro', favoritoLivro);
+    fixture.detectChanges();
+
     expect(component.livro().favorito).toBe(true);
+    component.alternarFavorito();
+    expect(component.livro().favorito).toBe(false);
   });
 
   it('should toggle favorito from true to false', () => {
@@ -66,12 +70,29 @@ describe('CardComponent', () => {
   });
 
   it('should toggle favorito multiple times', () => {
+    const mutableLivro: Livro = { ...mockLivro };
+    fixture.componentRef.setInput('livro', mutableLivro);
+    fixture.detectChanges();
+
     expect(component.livro().favorito).toBe(false);
     component.alternarFavorito();
+    fixture.detectChanges();
     expect(component.livro().favorito).toBe(true);
     component.alternarFavorito();
+    fixture.detectChanges();
     expect(component.livro().favorito).toBe(false);
     component.alternarFavorito();
+    fixture.detectChanges();
     expect(component.livro().favorito).toBe(true);
+  });
+
+  it('should maintain other livro properties when toggling favorito', () => {
+    const originalTitulo = component.livro().titulo;
+    const originalAutoria = component.livro().autoria;
+
+    component.alternarFavorito();
+
+    expect(component.livro().titulo).toBe(originalTitulo);
+    expect(component.livro().autoria).toBe(originalAutoria);
   });
 });

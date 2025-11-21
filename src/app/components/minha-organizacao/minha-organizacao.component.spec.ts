@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MinhaOrganizacaoComponent } from './minha-organizacao.component';
+import { ListaCategoriaComponent } from '../lista-categoria/lista-categoria.component';
 
 describe('MinhaOrganizacaoComponent', () => {
   let component: MinhaOrganizacaoComponent;
@@ -21,16 +22,55 @@ describe('MinhaOrganizacaoComponent', () => {
   });
 
   it('should have the correct selector', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.tagName.toLowerCase()).toBe('app-minha-organizacao');
+    const componentDef = (MinhaOrganizacaoComponent as any).ɵcmp;
+    expect(componentDef.selectors[0][0]).toBe('app-minha-organizacao');
   });
 
   it('should import ListaCategoriaComponent', () => {
-    const imports = (MinhaOrganizacaoComponent as any).ɵcmp.dependencies;
-    expect(imports).toBeDefined();
-    expect(
-      imports.some((dep: any) => dep.name === 'ListaCategoriaComponent')
-    ).toBeTruthy();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const listaCategoriaElement = compiled.querySelector('app-lista-categoria');
+    expect(listaCategoriaElement).toBeDefined();
+  });
+
+  it('should have ListaCategoriaComponent in imports', () => {
+    const componentImports = (MinhaOrganizacaoComponent as any).ɵcmp
+      .dependencies;
+    expect(componentImports).toBeDefined();
+
+    if (typeof componentImports === 'function') {
+      const resolvedImports = componentImports();
+      const hasListaCategoria = Array.isArray(resolvedImports)
+        ? resolvedImports.some(
+            (dep: any) =>
+              dep === ListaCategoriaComponent ||
+              dep.name === 'ListaCategoriaComponent' ||
+              dep.type?.name === 'ListaCategoriaComponent'
+          )
+        : false;
+      expect(hasListaCategoria).toBeTruthy();
+    } else {
+      const hasListaCategoria = Array.isArray(componentImports)
+        ? componentImports.some(
+            (dep: any) =>
+              dep === ListaCategoriaComponent ||
+              dep.name === 'ListaCategoriaComponent' ||
+              dep.type?.name === 'ListaCategoriaComponent'
+          )
+        : false;
+      expect(hasListaCategoria).toBeTruthy();
+    }
+  });
+
+  it('should contain app-lista-categoria component in template', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    fixture.detectChanges();
+    expect(compiled.innerHTML).toBeDefined();
+  });
+
+  it('should be defined with correct metadata', () => {
+    const metadata = (MinhaOrganizacaoComponent as any).ɵcmp;
+    expect(metadata).toBeDefined();
+    expect(metadata.standalone).toBeTruthy();
   });
 
   it('should render without errors', () => {

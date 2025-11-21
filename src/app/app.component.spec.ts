@@ -20,12 +20,24 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('organo');
   });
 
-  it('should render title', () => {
+  it('should render cabecalho component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, organo'
-    );
+    expect(compiled.querySelector('app-cabecalho')).toBeTruthy();
+  });
+
+  it('should render minha-organizacao component', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-minha-organizacao')).toBeTruthy();
+  });
+
+  it('should render rodape component', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-rodape')).toBeTruthy();
   });
 });
